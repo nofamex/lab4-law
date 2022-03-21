@@ -1,4 +1,3 @@
-from distutils.log import debug
 from http.client import HTTPException
 from fastapi import Depends, FastAPI, UploadFile
 from mahasiswa import service, models, schema
@@ -61,4 +60,4 @@ def upload_file(file: UploadFile, db:Session = Depends(get_db)):
     return uploaded_file
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0", port=8000, debug=True)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
